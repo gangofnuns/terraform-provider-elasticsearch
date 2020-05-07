@@ -25,8 +25,9 @@ func dataSourceElasticsearchDestination() *schema.Resource {
 				Required: true,
 			},
 			"body": {
-				Type:     schema.TypeMap,
-				Computed: true,
+				Type:             schema.TypeMap,
+				DiffSuppressFunc: diffSuppressDestination,
+				Computed:         true,
 			},
 		},
 	}
